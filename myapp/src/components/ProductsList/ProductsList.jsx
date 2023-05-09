@@ -21,7 +21,7 @@ const ProductsList = () => {
       return;
     }
     const [title] = productFields;
-    const lettersOnly = /^[a-zA-Z\s]+$/;
+    const lettersOnly = /^[a-zA-Zа-яА-Я\s]+$/;
 
     if (lettersOnly.test(title)) {
       dispatch(addNewProductAction(input));
