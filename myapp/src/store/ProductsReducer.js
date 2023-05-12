@@ -1,4 +1,4 @@
-const defaultState = [
+const data = [
   {
     id: 1,
     title: 'Bicycle',
@@ -24,6 +24,8 @@ const defaultState = [
     img: 'https://t3.ftcdn.net/jpg/02/70/35/12/360_F_270351278_DcM5yXHOi24uSdpXC8eQ2svwsIV74Cp8.jpg',
   },
 ];
+
+const defaultState = JSON.parse(localStorage.getItem('products')) ?? data;
 
 const DECR_BY_PAYLOAD = 'DECR_BY_PAYLOAD';
 const INCR_BY_PAYLOAD = 'INCR_BY_PAYLOAD';

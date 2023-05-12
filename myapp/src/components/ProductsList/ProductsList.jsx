@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import s from './ProductsList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductItem from '../ProductItem/ProductItem';
@@ -9,6 +9,10 @@ const ProductsList = () => {
   let products = useSelector(store => store.products);
 
   let dispatch = useDispatch();
+
+  useEffect(() => {
+    localStorage.setItem('products', JSON.stringify(products));
+  }, [products]);
 
   const handleAddNewProduct = () => {
     const input = prompt('Enter product information - title img(URL):');
